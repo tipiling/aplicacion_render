@@ -8,7 +8,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-xh7%ro^__fj73%rx!7ebh
 
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["aplicacion-render-cfpl.onrender.com"]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
