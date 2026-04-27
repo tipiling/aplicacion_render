@@ -8,11 +8,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-xh7%ro^__fj73%rx!7ebh
 
 DEBUG = False
 
-ALLOWED_HOSTS = [
-    "aplicacion-render-cfpl.onrender.com",
-    "localhost",
-    "127.0.0.1"
-]
+ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -57,7 +53,7 @@ WSGI_APPLICATION = "registro.wsgi.application"
 # Base de datos
 DATABASES = {
     'default': dj_database_url.config(
-        default=f'sqlite:///{BASE_DIR / "db.sqlite3"}',
+        default=os.environ.get("DATABASE_URL"),
         conn_max_age=600,
     )
 }
