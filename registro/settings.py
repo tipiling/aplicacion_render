@@ -52,11 +52,12 @@ WSGI_APPLICATION = "registro.wsgi.application"
 
 # Base de datos
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.environ.get("DATABASE_URL"),
-        conn_max_age=600,
-    )
-}
+        'default': dj_database_url.config(
+                default=os.environ.get("postgresql://resgistro_db_user:qYCVuViwiM27GoYkTf17ciFCEPiSo8Hz@dpg-d7n713mgvqtc73amviug-a/resgistro_db"),
+                        conn_max_age=600,
+                            )
+                            }
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
