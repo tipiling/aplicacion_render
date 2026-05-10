@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Usuarios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0px 10px 25px rgba(0,0,0,0.3);
+        }
+        h2 {
+            text-align: center;
+            color: #2a5298;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h2>Lista de Usuarios Registrados</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Cédula</th>
+                <th>Teléfono</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usuario in usuarios %}
+            <tr>
+                <td>{{ usuario.nombre }}</td>
+                <td>{{ usuario.fecha_nacimiento }}</td>
+                <td>{{ usuario.cedula }}</td>
+                <td>{{ usuario.telefono }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4">No hay usuarios registrados aún.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p style="text-align: center; margin-top: 20px;">
+        <a href="/">Registrar nuevo usuario</a>
+    </p>
+</div>
+</body>
+</html>
